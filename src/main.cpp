@@ -1,29 +1,27 @@
 #include <Arduino.h>
 #include <Adafruit_Sensor.h>
 
-const int Relay1 = D6;
-const int Relay2 = D7;
+int RelayFan = 4;
+int RelayPum = 0;
+// const int Relay2 = D7;
 
 void setup() {
  Serial.begin(115200);
- Serial.print("Relay Test");
+ Serial.println("Relay Test");
 
- pinMode(Relay1,OUTPUT);
- pinMode(Relay2,OUTPUT);
+ pinMode(RelayFan,OUTPUT);
+//  pinMode(Relay2,OUTPUT);
 
 }
 void loop() {
-  
-  digitalWrite(Relay1,HIGH);
-  digitalWrite(Relay2,HIGH);
-  Serial.print(Relay1);
-  Serial.print(Relay2);
-  delay(1000);
-  digitalWrite(Relay1,LOW);
-  digitalWrite(Relay2,LOW);
-  Serial.print(Relay1);
-  Serial.print(Relay2);
-  delay(1000);
+   digitalWrite(RelayFan,HIGH);
+   digitalWrite(RelayPum,HIGH);
+   Serial.println("on");
+   delay(20000);
+digitalWrite(RelayFan,LOW);
+digitalWrite(RelayPum,LOW);
+Serial.println("off");
+delay(20000);
 }
 
 
