@@ -1,4 +1,5 @@
 #include <Arduino.h>
+
 #include <Adafruit_Sensor.h>
 
 int RelayFan = 4;
@@ -10,10 +11,12 @@ void setup() {
  Serial.println("Relay Test");
 
  pinMode(RelayFan,OUTPUT);
-//  pinMode(Relay2,OUTPUT);
-
+ pinMode(RelayPum,OUTPUT);
 }
+
+
 void loop() {
+
    digitalWrite(RelayFan,HIGH);
    digitalWrite(RelayPum,HIGH);
    Serial.println("on");
